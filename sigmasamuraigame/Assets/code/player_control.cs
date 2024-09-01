@@ -2,40 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class player_control: MonoBehaviour
 {
-    //I recommend 7 for the move speed, and 1.2 for the force damping
     public Rigidbody2D rb;
-    public float moveSpeed;
-    public Vector2 forceToApply;
-    public Vector2 PlayerInput;
-    public float forceDamping;
+    public float MoveSpeed;
+    Vector2 movement;
+
     void Update()
     {
-        PlayerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
     void FixedUpdate()
     {
-        Vector2 moveForce = PlayerInput * moveSpeed;
-        moveForce += forceToApply;
-        forceToApply /= forceDamping;
-        if (Mathf.Abs(forceToApply.x) <= 0.01f && Mathf.Abs(forceToApply.y) <= 0.01f)
-        {
-            forceToApply = Vector2.zero;
-        }
-        if (Mathf.Abs(moveForce.x) <= 0.01f && Mathf.Abs(moveForce.y) <= 0.01f)
-        {
-            moveForce = Vector2.zero;
-        }
-        rb.velocity = moveForce;
+        rb.AddForce(movement * MoveSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Bullet"))
-        {
-            forceToApply += new Vector2(-20, 0);
-            Destroy(collision.gameObject);
-        }
-    }
+    
 }
