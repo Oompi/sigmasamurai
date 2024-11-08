@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7313691153149953361}
   - component: {fileID: 259653694951308806}
-  - component: {fileID: 8271957448491448188}
   - component: {fileID: 5980175173168696693}
   - component: {fileID: 1592399926125380515}
+  - component: {fileID: -6187053158085758281}
   m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
@@ -88,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &8271957448491448188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3035619402320411231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 396ecfda6c06e834eb9baa3b3fc319b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 5980175173168696693}
-  MoveSpeed: 100
 --- !u!50 &5980175173168696693
 Rigidbody2D:
   serializedVersion: 4
@@ -164,6 +150,20 @@ CircleCollider2D:
   m_Offset: {x: 0.0019587278, y: 0.36236542}
   serializedVersion: 2
   m_Radius: 0.24536486
+--- !u!114 &-6187053158085758281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3035619402320411231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a0a1568df901845bef26e5e15a0bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  MoveSpeed: 0
 --- !u!1 &9008082067587802905
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 4493632664018966954}
   - component: {fileID: 7278159047396806465}
   - component: {fileID: 4962799506021702371}
-  - component: {fileID: 2539297394113527143}
+  - component: {fileID: 403529428389072324}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -257,7 +257,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9008082067587802905}
   m_Enabled: 1
---- !u!114 &2539297394113527143
+--- !u!114 &403529428389072324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,7 +266,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9008082067587802905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c131f65ce67fa418a3494eda3b54c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b110b86ec66f644282d2afd5d170b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 7313691153149953361}
