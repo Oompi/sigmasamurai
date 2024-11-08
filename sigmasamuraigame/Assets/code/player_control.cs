@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_control: MonoBehaviour
+public class player_control : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float MoveSpeed;
@@ -18,5 +18,5 @@ public class player_control: MonoBehaviour
         rb.AddForce(movement * MoveSpeed * Time.deltaTime);
     }
 
-    
+
 }
